@@ -33,7 +33,7 @@ namespace Laba1
             ulong minutes = totalSeconds / 60;
             totalSeconds -= (minutes) * 60;
 
-            Console.WriteLine(String.Format("h: {0}; m: {1}; s: {2}", hours, minutes, totalSeconds));
+            Console.WriteLine("h: {0}; m: {1}; s: {2}", hours, minutes, totalSeconds);
             // Подставляем значения в нужные места строки (обозначены как {число}) 
         }
 
@@ -77,7 +77,7 @@ namespace Laba1
 
             double result = hAngle * h + mAngle * m + sAngle * s;
 
-            Console.WriteLine(string.Format("Угол поворота стрелки: {0}", result));
+            Console.WriteLine("Угол поворота стрелки: {0}", result);
         }
 
         static void N4()
@@ -112,8 +112,8 @@ namespace Laba1
 
             double S = .5 * cathet1 * cathet2;
             double P = cathet1 + cathet2 + hypotenuse;
-            Console.WriteLine(String.Format("Гипотенуза: {0}", hypotenuse));
-            Console.WriteLine(String.Format("S = {0}; P = {1}", S, P));
+            Console.WriteLine("Гипотенуза: {0}", hypotenuse);
+            Console.WriteLine("S = {0}; P = {1}", S, P);
         }
         private static void N6()
         {
@@ -133,7 +133,7 @@ namespace Laba1
             num /= 10;
             res *= num;
 
-            Console.WriteLine(String.Format("Результат: {0}", res));
+            Console.WriteLine("Результат: {0}", res);
         }
         static void N7()
         {
@@ -151,7 +151,7 @@ namespace Laba1
             res += (num % 10) * 10;
             num /= 10;
             res += num;
-            Console.WriteLine(String.Format("Результат: {0}", res));
+            Console.WriteLine("Результат: {0}", res);
         }
 
         static void N8()
@@ -161,7 +161,7 @@ namespace Laba1
             double n = Convert.ToDouble(numS);
 
             double res = n * (n * (n * (3 * n - 5) + 2) - 1) + 7;
-            Console.WriteLine(String.Format("Результат: {0}", res));
+            Console.WriteLine("Результат: {0}", res);
         }
         static void N9()
         {
@@ -208,26 +208,73 @@ namespace Laba1
             Console.WriteLine("x1 = {0}; x2 = {1}; x3 = {2}", x1, x2, x3);
 
         }
+
+        static void Ind1()
+        {
+            string[] titles =     { "Название",  "Вид",  "Адрес",              "Рейтинг (из 10)" };
+            string[] pafos =      { "Пафос",     "Р",    "Ул. Артема, 300а",   "9" };
+            string[] chelentano = { "Челентано", "РБП",  "Бул. Пушкина, 510",  "8" };
+            string[] vkusnyaski = { "Вкусняшки", "К",    "Просп. Ильича, 320", "6" };
+            Console.WriteLine(new String('-', 84));
+            Console.WriteLine("| {0, -80} |", "Рестораны и кафе");
+            Console.WriteLine(new String('-', 84));
+            Console.WriteLine("| {0, -16} | {1, -8} | {2, -30} | {3, -17} |", titles[0], titles[1], titles[2], titles[3]);
+            Console.WriteLine(new String('-', 84));
+            Console.WriteLine("| {0, -16} | {1, -8} | {2, -30} | {3, -17} |", pafos[0], pafos[1], pafos[2], pafos[3]);
+            Console.WriteLine("| {0, -16} | {1, -8} | {2, -30} | {3, -17} |", chelentano[0], chelentano[1], chelentano[2], chelentano[3]);
+            Console.WriteLine("| {0, -16} | {1, -8} | {2, -30} | {3, -17} |", vkusnyaski[0], vkusnyaski[1], vkusnyaski[2], vkusnyaski[3]);
+            Console.WriteLine(new String('-', 84));
+            Console.WriteLine("| {0, -80} |", "Перечисляемый тип: Р – ресторан, РБП – ресторан быстрого питания, К – кафе");
+            Console.WriteLine(new String('-', 84));
+        }
+
+        static void Ind2()
+        {
+            Console.Write("Введите a (a != 0): ");
+            double a = Convert.ToDouble(Console.ReadLine());
+            if(a == 0)
+            {
+                Console.WriteLine("Неверно задан параметр.");
+                return;
+            }
+            Console.Write("Введите b (b != 0): ");
+            double b = Convert.ToDouble(Console.ReadLine());
+            if (b == 0)
+            {
+                Console.WriteLine("Неверно задан параметр.");
+                return;
+            }
+            Console.Write("Введите x: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double R = x * x * (x + 1) / b - Math.Pow(Math.Sin(x + a), 2);
+            double s = Math.Sqrt(x * b / a) + Math.Pow(Math.Cos(Math.Pow(x + b, 3)), 2);
+
+            Console.WriteLine("R = {0}; s = {1}", R, s);
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Задание 1");
-            N1();
-            Console.WriteLine("Задание 2");
-            N2();
-            Console.WriteLine("Задание 3");
-            N3();
-            Console.WriteLine("Задание 4");
-            N4();
-            Console.WriteLine("Задание 5");
-            N5();
-            Console.WriteLine("Задание 6");
-            N6();
-            Console.WriteLine("Задание 7");
-            N7();
-            Console.WriteLine("Задание 8");
-            N8();
-            Console.WriteLine("Задание 9");
-            N9();
+            //Console.WriteLine("Задание 1");
+            //N1();
+            //Console.WriteLine("Задание 2");
+            //N2();
+            //Console.WriteLine("Задание 3");
+            //N3();
+            //Console.WriteLine("Задание 4");
+            //N4();
+            //Console.WriteLine("Задание 5");
+            //N5();
+            //Console.WriteLine("Задание 6");
+            //N6();
+            //Console.WriteLine("Задание 7");
+            //N7();
+            //Console.WriteLine("Задание 8");
+            //N8();
+            //Console.WriteLine("Задание 9");
+            //N9();
+
+            Console.WriteLine("Индивидуальное задание 1");
+            Ind1();
         }
 
     }
