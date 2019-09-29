@@ -68,14 +68,52 @@ namespace Laba1
                 Console.WriteLine("Неверно введено s");
                 return;
             }
-
+            // Часовая стрелка делит круг на 12 частей
             double hAngle = 360.0 / 12.0;
+            // Минутная стрелка поворачивает часовую за 60 минут
             double mAngle = hAngle / 60.0;
+            // Секундная стрелка поворачивает минутную за 60 секунд
             double sAngle = mAngle / 60.0;
 
             double result = hAngle * h + mAngle * m + sAngle * s;
 
-            Console.WriteLine(String.Format("Угол поворота стрелки: {0}", result));
+            Console.WriteLine(string.Format("Угол поворота стрелки: {0}", result));
+        }
+
+        static void N4()
+        {
+            Console.Write("Введите переменную A: ");
+            string aS = Console.ReadLine();
+            Console.Write("Введите переменную В: ");
+            string bS = Console.ReadLine();
+
+            int a = Convert.ToInt32(aS);
+            int b = Convert.ToInt32(bS);
+
+            a += b;
+            b = a - b;
+            a -= b;
+
+            Console.WriteLine("A = {0}; B = {1}", a, b);
+        }
+
+        static void N5()
+        {
+            Console.Write("Введите первый катет: ");
+            string cathet1S = Console.ReadLine();
+            
+            Console.Write("Введите второй катет: ");
+            string cathet2S = Console.ReadLine();
+
+            double cathet1 = Convert.ToDouble(cathet1S);
+            double cathet2 = Convert.ToDouble(cathet2S);
+
+            double hypotenuse = Math.Sqrt(cathet1 * cathet1 + cathet2 * cathet2);
+
+            double S = .5 * cathet1 * cathet2;
+            double P = cathet1 + cathet2 + hypotenuse;
+            Console.WriteLine(String.Format("Гипотенуза: {0}", hypotenuse));
+            Console.WriteLine(String.Format("S = {0}; P = {1}", S, P));
         }
         static void Main(string[] args)
         {
@@ -85,6 +123,10 @@ namespace Laba1
             N2();
             Console.WriteLine("Задание 3");
             N3();
+            Console.WriteLine("Задание 4");
+            N4();
+            Console.WriteLine("Задание 5");
+            N5();
         }
     }
 }
