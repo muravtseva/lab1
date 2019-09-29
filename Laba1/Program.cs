@@ -115,6 +115,99 @@ namespace Laba1
             Console.WriteLine(String.Format("Гипотенуза: {0}", hypotenuse));
             Console.WriteLine(String.Format("S = {0}; P = {1}", S, P));
         }
+        private static void N6()
+        {
+            Console.Write("Введите четырехзначное число: ");
+            string numS = Console.ReadLine();
+            int num = Convert.ToInt32(numS);
+            if(num > 9999 || num < 1000)
+            {
+                Console.WriteLine("Неверное число");
+                return;
+            }
+            int res = num % 10;
+            num /= 10;
+            res *= num % 10;
+            num /= 10;
+            res *= num % 10;
+            num /= 10;
+            res *= num;
+
+            Console.WriteLine(String.Format("Результат: {0}", res));
+        }
+        static void N7()
+        {
+            Console.Write("Введите трехзначное число: ");
+            string numS = Console.ReadLine();
+            int num = Convert.ToInt32(numS);
+            if (num > 999 || num < 100)
+            {
+                Console.WriteLine("Неверное число");
+                return;
+            }
+
+            int res = (num % 10) * 100;
+            num /= 10;
+            res += (num % 10) * 10;
+            num /= 10;
+            res += num;
+            Console.WriteLine(String.Format("Результат: {0}", res));
+        }
+
+        static void N8()
+        {
+            Console.Write("Введите число: ");
+            string numS = Console.ReadLine();
+            double n = Convert.ToDouble(numS);
+
+            double res = n * (n * (n * (3 * n - 5) + 2) - 1) + 7;
+            Console.WriteLine(String.Format("Результат: {0}", res));
+        }
+        static void N9()
+        {
+            Console.Write("Введите a1: ");
+            double a1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите b1: ");
+            double b1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите c1: ");
+            double c1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите d1: ");
+            double d1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите a2: ");
+            double a2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите b2: ");
+            double b2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите c2: ");
+            double c2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите d2: ");
+            double d2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите a3: ");
+            double a3 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите b3: ");
+            double b3 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите c3: ");
+            double c3 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите d3: ");
+            double d3 = Convert.ToDouble(Console.ReadLine());
+
+            double determinant = a1 * b2 * c3 - a1 * b3 * c2 - b1 * a2 * c3 + b1 * a3 * c2 + c1 * a2 * b3 - c1 * a3 * b2;
+
+            if(determinant == 0)
+            {
+                Console.WriteLine("Определитель равен нулю");
+                return;
+            }
+
+            double de1 = d1 * b2 * c3 - d1 * b3 * c2 - b1 * d2 * c3 + b1 * d3 * c2 + c1 * d2 * b3 - c1 * d3 * b2;
+            double de2 = a1 * d2 * c3 - a1 * d3 * c2 - d1 * a2 * c3 + d1 * a3 * c2 + c1 * a2 * d3 - c1 * a3 * d2;
+            double de3 = a1 * b2 * d3 - a1 * b3 * d2 - b1 * a2 * d3 + b1 * a3 * d2 + d1 * a2 * b3 - d1 * a3 * b2;
+
+            double x1 = (de1 / determinant);
+            double x2 = (de2 / determinant);
+            double x3 = (de3 / determinant);
+            Console.WriteLine("x1 = {0}; x2 = {1}; x3 = {2}", x1, x2, x3);
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Задание 1");
@@ -127,6 +220,15 @@ namespace Laba1
             N4();
             Console.WriteLine("Задание 5");
             N5();
+            Console.WriteLine("Задание 6");
+            N6();
+            Console.WriteLine("Задание 7");
+            N7();
+            Console.WriteLine("Задание 8");
+            N8();
+            Console.WriteLine("Задание 9");
+            N9();
         }
+
     }
 }
