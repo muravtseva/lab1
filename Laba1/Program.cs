@@ -254,27 +254,61 @@ namespace Laba1
         }
         static void Main(string[] args)
         {
-            //Console.WriteLine("Задание 1");
-            //N1();
-            //Console.WriteLine("Задание 2");
-            //N2();
-            //Console.WriteLine("Задание 3");
-            //N3();
-            //Console.WriteLine("Задание 4");
-            //N4();
-            //Console.WriteLine("Задание 5");
-            //N5();
-            //Console.WriteLine("Задание 6");
-            //N6();
-            //Console.WriteLine("Задание 7");
-            //N7();
-            //Console.WriteLine("Задание 8");
-            //N8();
-            //Console.WriteLine("Задание 9");
-            //N9();
+            
+            Console.WriteLine("1. Задание 1");
+            Console.WriteLine("2. Задание 2");
+            Console.WriteLine("3. Задание 3");
+            Console.WriteLine("4. Задание 4");
+            Console.WriteLine("5. Задание 5");
+            Console.WriteLine("6. Задание 6");
+            Console.WriteLine("7. Задание 7");
+            Console.WriteLine("8. Задание 8");
+            Console.WriteLine("9. Задание 9");
+            Console.WriteLine("10. Индивидуальное задание 1");
+            Console.WriteLine("11. Индивидуальное задание 2");
+            Console.Write("Введите номер задания: ");
 
-            Console.WriteLine("Индивидуальное задание 1");
-            Ind1();
+            string read = Console.ReadLine();
+
+            Int32 number = Convert.ToInt32(read);
+
+            switch (number)
+            {
+                case 1:
+                    N1();
+                    break;
+                case 2:
+                    N2();
+                    break;
+                case 3:
+                    N3();
+                    break;
+                case 4:
+                    N4();
+                    break;
+                case 5:
+                    N5();
+                    break;
+                case 6:
+                    N6();
+                    break;
+                case 7:
+                    N7();
+                    break;
+                case 8:
+                    N8();
+                    break;
+                case 9:
+                    N9();
+                    break;
+                case 10:
+                    Ind1();
+                    break;
+                case 11:
+                    Ind2();
+                    break;
+            }
+
         }
 
     }
